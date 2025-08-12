@@ -1,0 +1,40 @@
+<div class="horarios">
+  <div class="card">
+    <h2 style="font-weight: 500;" class="primary-color">Horários</h2>
+    <div class="semana-navegacao">
+      <span style="color: gray; font-size: 0.75rem;">
+        Semana de {{ formatarData(semanaInicio) }} a {{ formatarData(semanaFim) }}
+      </span>
+      <div class="setas">
+        <button class="primary-color" (click)="voltarSemana()" aria-label="Semana anterior">&lt;</button>
+        <button class="primary-color" (click)="avancarSemana()" aria-label="Próxima semana">&gt;</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="dias-semana">
+    <div *ngFor="let dia of semana" class="card dia-card">
+      <h3 class="primary-color">{{ dia.nome }}</h3>
+      <span style="color: gray; font-size: 0.75rem;">{{ formatarData(dia.data) }}</span>
+      <div *ngFor="let aula of getAulasDoDia(dia.data)" class="aula">
+        <div class="aula-info">
+            <span> <i class="fa-regular fa-clock" style="color: #004080;"></i> {{aula.horario}}</span>
+            <span [ngClass]="{
+  'teorica-class': aula.conteudo === 'Teórica',
+  'pratica-class': aula.conteudo === 'Prática'
+}">
+  {{ aula.conteudo }}
+</span>
+        </div>
+        <div class="aula-detalhes">
+          <span style="font-weight: 500;">{{ aula.nome }}</span>
+          <span style="color: #aaacb1; font-weight: 400; font-size: 0.75rem;">{{ aula.cod }}</span>
+        </div>
+        <div class="aula-professor">
+          <span><i class="fa-solid fa-location-dot" style="color: #004080;"></i>{{ aula.local }}</span>
+          <span><i class="fa-solid fa-user-tie" style="color: #004080;"></i>{{ aula.nomeProfessor }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

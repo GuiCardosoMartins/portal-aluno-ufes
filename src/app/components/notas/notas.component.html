@@ -1,0 +1,54 @@
+<div class="notas">
+    <div class="card">
+        <div class="card-notas">
+            <div>
+                <span class="primary-color">Notas</span>
+                <span>Acompanhe seu desempenho acadêmico</span>
+            </div>
+            <div>
+                <span style="text-align: right; " class="primary-color">8.1</span>
+                <span>Média Geral</span>
+            </div>
+        </div>
+    </div>
+
+   <div class="filtro-periodo" style="margin-top: 1rem;">
+    <label for="periodo">Período:</label>
+    <select [(ngModel)]="periodoSelecionado" (ngModelChange)="onPeriodoChange($event)">
+        <option *ngFor="let periodo of periodos" [value]="periodo">{{ periodo }}</option>
+    </select>
+  </div>
+
+  <!-- disciplinas -->
+  <div *ngFor="let disciplina of disciplinasFiltradas" style="margin-top: 1rem;">
+  <div class="card">
+
+        <div class="disciplina-header">
+            <div>
+                <span class="primary-color">{{disciplina.nome}}</span>
+                <span>{{disciplina.COD}} - {{disciplina.Cred}} créditos</span>
+            </div>
+            <span class="status" [ngClass]="{
+                'status-aprovado': disciplina.status === 'Aprovado',
+                'status-reprovado': disciplina.status === 'Reprovado',
+                'status-em-andamento': disciplina.status === 'Cursando'
+            }">
+                {{disciplina.status}}
+            </span>
+        </div>
+        
+        <div class="disciplina-notas">
+            <div *ngFor="let nota of disciplina.atividades">
+                <span>{{nota.notaRecebida}}</span>
+                <span>{{nota.nome}}</span>
+                
+            </div>
+        </div>
+        <div style="margin-top: 1rem;" class="progress-container">
+            <span style="font-size: 0.75rem; color: gray" >Média: {{disciplina.media}}</span>
+            <progress max="100" [value]="disciplina.media * 10" class="progress-bar"></progress>
+        </div>
+    </div>
+  </div>
+
+</div>

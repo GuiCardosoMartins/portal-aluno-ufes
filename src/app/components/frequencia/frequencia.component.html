@@ -1,0 +1,96 @@
+<div class="frequencia-container">
+  <header class="frequencia-header">
+    <div>
+      <h2 class="primary-color">Frequência</h2>
+      <p>Acompanhe sua presença nas aulas</p>
+    </div>
+    <div class="frequencia-geral">
+      <span class="primary-color">90%</span>
+      <small>Geral</small>
+    </div>
+  </header>
+
+  <div class="filtro-periodo" style="margin-top: 1rem;">
+  <label for="periodo">Disciplinas:</label>
+
+  <select [(ngModel)]="disciplinaSelecionada" (ngModelChange)="onDisciplinaChange($event)">
+    <option [ngValue]="'all'">Todas as disciplinas</option>
+    <option *ngFor="let d of disciplinas" [ngValue]="d">{{ d.nome }}</option>
+  </select>
+</div>
+
+  <article class="disciplina-card" *ngFor="let disciplina of disciplinasFiltradas">
+    <header class="card-header">
+      <h3 class="primary-color">{{ disciplina.nome }}</h3>
+      <div class="progress-info">
+        <span class="status-icon" [ngClass]="{
+          'green-icon': disciplina.status === 'green',
+          'yellow-icon': disciplina.status === 'yellow',
+          'red-icon': disciplina.status === 'red'
+        }">
+          {{ disciplina.status === 'green' ? '✔' : disciplina.status === 'yellow' ? '⚠' : '✘' }}
+        </span>
+        <span class="progress-percent">{{ disciplina.percentual }}%</span>
+      </div>
+    </header>
+    <div class="card-subtitle">{{ disciplina.codigo }}</div>
+    <div class="card-details">
+      <div class="progress-bar-container">
+        <div class="progress-bar" [ngClass]="{
+          'green-bar': disciplina.status === 'green',
+          'yellow-bar': disciplina.status === 'yellow',
+          'red-bar': disciplina.status === 'red'
+        }" [style.width.%]="disciplina.percentual">
+        </div>
+      </div>
+      <div class="data-row">
+        <div class="data-item">
+          <span class="data-value">{{ disciplina.presentes }}</span>
+          <span class="data-label">Presentes</span>
+        </div>
+        <div class="data-item">
+          <span class="data-value">{{ disciplina.faltas }}</span>
+          <span class="data-label">Faltas</span>
+        </div>
+        <div class="data-item">
+          <span class="data-value">{{ disciplina.total }}</span>
+          <span class="data-label">Total</span>
+        </div>
+      </div>
+    </div>
+    
+    <div *ngIf="disciplina.alertMsg" 
+     class="alert" 
+     [ngClass]="{'alert-falha': disciplina.status === 'red'}">
+  <span>{{ disciplina.alertMsg }}</span>
+</div>
+
+</article>
+    <article class="disciplina-card">
+  <h2 style="font-size: 1rem; font-weight: 500;" class="primary-color">{{ disciplinaSelecionada === 'all' ? 'Últimas presenças' : 'Presenças' }}</h2>
+  <div *ngFor="let ultima of ultimasPresencasFiltradas" class="ultimas">
+    <div class="ultima-presenca">
+      <div class="ultima-info">
+        <span>
+          <i [ngClass]="{
+              'icon-check': ultima.status === 'Presente',
+              'icon-x': ultima.status === 'Falta'
+          }">
+            {{ ultima.status === 'Presente' ? '✔' : '✘' }}
+          </i>
+        </span>
+
+        <div>
+          <span>{{ultima.disciplina}}</span>
+          <span class="ultima-data">{{ ultima.data }}</span>
+        </div>
+      </div>
+      <span class="ultima-status" [ngClass]="{
+          'black-bar': ultima.status === 'Presente',
+          'red-bar': ultima.status === 'Falta'
+      }">{{ ultima.status }}</span>
+    </div>
+  </div>
+</article>
+
+</div>

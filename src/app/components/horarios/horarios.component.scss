@@ -1,0 +1,85 @@
+.horarios{
+    padding: 4rem 0.75rem;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.semana-navegacao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.setas {
+    display: flex;
+    button {
+        margin-left: 0.5rem;
+        cursor: pointer;
+        background: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 0 8px;
+        font-size: 1.2rem;
+        &:hover {
+            background-color: #74adee;
+        }
+    }
+}
+.dia-card{
+    h3{
+        font-weight: 400;
+        font-size: 1.1rem;
+        color: #333;
+    }
+    .aula{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 1rem 0;
+        border: 1px solid #c9cdd4;
+        border-radius: 0.5rem;
+        padding: 0.5rem 1rem;
+    }
+}
+.aula-info, .aula-professor{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    span{
+        font-size: 0.875rem;
+        color: #555;
+    }
+}
+.aula-detalhes{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    span{
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #333;
+    }
+}
+.teorica-class {
+    background-color: #d0e8f2;
+    color: #1565c0 !important;             
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.75rem;
+}
+
+.pratica-class {
+    background-color: #dcedc8;  
+    color: #33691e !important;             
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.75rem;
+}

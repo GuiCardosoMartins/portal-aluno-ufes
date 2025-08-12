@@ -1,0 +1,17 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Círculo de fundo -->
+  <circle cx="40" cy="40" r="38" fill="#1e3a8a" stroke="#ffffff" stroke-width="4"/>
+  
+  <!-- Letra U estilizada -->
+  <path d="M20 20 L20 50 Q20 60 30 60 L50 60 Q60 60 60 50 L60 20" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round"/>
+  
+  <!-- Letra F estilizada -->
+  <path d="M25 25 L55 25 M25 25 L25 55 M25 40 L45 40" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round"/>
+  
+  <!-- Letra E estilizada -->
+  <path d="M60 25 L30 25 M30 25 L30 55 M30 25 L60 25 M30 40 L50 40 M30 55 L60 55" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round"/>
+  
+  <!-- Letra S estilizada -->
+  <path d="M65 30 Q65 20 55 20 L45 20 Q35 20 35 30 Q35 40 45 40 L55 40 Q65 40 65 50 Q65 60 55 60 L45 60 Q35 60 35 50" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round"/>
+</svg>
+

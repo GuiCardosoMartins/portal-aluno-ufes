@@ -1,0 +1,29 @@
+<header class="header">
+  <div class="user-info">
+    <img routerLink="/perfil" routerLinkActive="active" [src]="mockUserFoto || 'assets/User.svg'"
+              alt="Foto do usuário"
+              class="user-photo" alt="Foto do João" class="user-photo" />
+    <div class="user-text">
+      <div class="user-name primary-color">{{ user.nome }}</div>
+      <div class="user-course">{{ user.curso }}</div>
+    </div>
+  </div>
+
+  <div class="notification" (click)="toggleTooltip()">
+    <span class="notification-icon"><i class="fa-solid fa-bell primary-color"></i></span>
+    <span *ngIf="notificacoesCount > 0" class="notification-badge">{{ notificacoesCount }}</span>
+
+    <!-- Tooltip -->
+    <div class="notification-tooltip" *ngIf="tooltipAberto">
+      <div *ngIf="notificacoes.length; else semNotificacoes">
+        <div class="notification-item" *ngFor="let n of notificacoes">
+          <strong class="primary-color">{{ n.texto }}</strong>
+          <small>{{ n.data }}</small>
+        </div>
+      </div>
+      <ng-template #semNotificacoes>
+        <div class="notification-empty">Sem novas notificações</div>
+      </ng-template>
+    </div>
+  </div>
+</header>

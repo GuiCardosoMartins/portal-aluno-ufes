@@ -1,0 +1,135 @@
+<div class="profile-container">
+  <div class="card card-info-user">
+    <img
+      [src]="mockUserFoto || 'assets/User.svg'"
+      alt="Foto do usuário"
+      class="user-photo"
+    />
+    <span style="font-weight: 500">Guilherme Cardoso Martins</span>
+    <span style="color: gray">Ciência da Computação</span>
+    <div class="situation-curse">
+      <span>Sem evasão</span>
+      <span>6º Período</span>
+    </div>
+  </div>
+
+  <div class="card card-info-acad">
+    <span style="display: flex; align-items: center; gap: 1rem">
+      <i class="fa-solid fa-book-open primary-color"></i>
+      <h2 style="font-weight: 600; font-size: 1rem" class="primary-color">
+        Informações Acadêmicas
+      </h2>
+    </span>
+    <div class="info-acad">
+      <div>
+        <span>Matrícula</span>
+        <span>2023201343</span>
+      </div>
+      <div>
+        <span>Ingresso</span>
+        <span>2023/2</span>
+      </div>
+    </div>
+    <div class="info-acad">
+      <div>
+        <span>CRA</span>
+        <span>8.2</span>
+      </div>
+      <div>
+        <span>Progresso</span>
+        <span>1800/2450</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-info-pessoal">
+    <span style="display: flex; align-items: center; gap: 1rem">
+      <i class="fa fa-user primary-color"></i>
+      <h2 style="font-weight: 600; font-size: 1rem" class="primary-color">
+        Informações Pessoais
+      </h2>
+    </span>
+    <div class="info-pessoal">
+      <span
+        ><i class="fa-regular fa-envelope"></i
+        >guilherme.c.martins@edu.ufes.br</span
+      >
+      <span><i class="fa-solid fa-phone"></i>(27) 99999-9999</span>
+      <span><i class="fa-solid fa-location-dot"></i>Alegre - ES</span>
+    </div>
+  </div>
+
+  <div class="card card-documentos">
+    <span style="display: flex; align-items: center; gap: 1rem">
+      <i class="fa-solid fa-download primary-color"></i>
+      <h2 style="font-weight: 600; font-size: 1rem" class="primary-color">
+        Documentos
+      </h2>
+    </span>
+    <div class="documentos-list">
+      <div class="documento-item">
+        <span>Histórico Escolar</span>
+        <button class="btn btn-outline">
+          <i class="fa-solid fa-download"></i>
+        </button>
+      </div>
+      <div class="documento-item">
+        <span>Comprovante de Matrícula</span>
+        <button class="btn btn-outline">
+          <i class="fa-solid fa-download"></i>
+        </button>
+      </div>
+      <div class="documento-item">
+        <span>Integralização Curricular</span>
+        <button class="btn btn-outline">
+          <i class="fa-solid fa-download"></i>
+        </button>
+      </div>
+    </div>
+
+    <button routerLink="/all-documents" routerLinkActive="active">
+      Ver todos os documentos
+    </button>
+  </div>
+
+  <div class="card card-atividades">
+    <span style="display: flex; align-items: center; gap: 1rem">
+      <i class="fa-solid fa-chart-line primary-color"></i>
+      <h2 style="font-weight: 600; font-size: 1rem" class="primary-color">
+        Atividades Complementares
+      </h2>
+    </span>
+    <div class="atividades-list">
+      <div class="atividade-item">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <div>
+          <span>Monitoria de Algoritmos</span>
+          <span class="atividade-data">2023</span>
+        </div>
+      </div>
+      <div class="atividade-item">
+        <i class="fa-solid fa-diagram-project"></i>
+        <div>
+          <span>Projeto de Iniciação Científica</span>
+          <span class="atividade-data">2023</span>
+        </div>
+      </div>
+      <div class="atividade-item">
+        <i class="fa-solid fa-calendar-week"></i>
+        <div>
+          <span>Participação em Eventos</span>
+          <span class="atividade-data">2022</span>
+        </div>
+      </div>
+    </div>
+    <button routerLink="/add-ativ-complementar" routerLinkActive="active">
+      Adicionar atividades complementares
+    </button>
+  </div>
+  <div routerLink="/configuracoes" class="card button-config">
+    <i class="fa-solid fa-gear"></i><span>Configurações</span>
+  </div>
+  <div routerLink="/login" routerLinkActive="active" class="card button-logout">
+    <i class="fa-solid fa-arrow-right-from-bracket"></i><span>Sair</span>
+  </div>
+</div>

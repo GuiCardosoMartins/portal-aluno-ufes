@@ -1,0 +1,94 @@
+<div class="ativ-complementar">
+  <div class="card">
+    <h2 class="primary-color" style="font-size: 1rem; margin-bottom: 1rem">
+      Solicitação de Atividade Complementar
+    </h2>
+    <form [formGroup]="form">
+      <div class="form-group">
+        <label for="descricao">Descrição</label>
+        <input id="descricao" type="text" formControlName="descricao" />
+        <small
+          *ngIf="
+            form.get('descricao')?.touched && form.get('descricao')?.invalid
+          "
+          class="error"
+        >
+          Descrição deve ter pelo menos 3 caracteres.
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="tipo">Tipo</label>
+        <input id="tipo" type="text" formControlName="tipo" />
+        <small
+          *ngIf="form.get('tipo')?.touched && form.get('tipo')?.invalid"
+          class="error"
+        >
+          Tipo deve ter pelo menos 6 caracteres.
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="dataInicio">Data de Início</label>
+        <input id="dataInicio" type="date" formControlName="dataInicio" />
+        <small
+          *ngIf="
+            form.get('dataInicio')?.touched && form.get('dataInicio')?.invalid
+          "
+          class="error"
+        >
+          Data de início é obrigatória.
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="dataFim">Data de Término</label>
+        <input id="dataFim" type="date" formControlName="dataFim" />
+        <small
+          *ngIf="form.get('dataFim')?.touched && form.get('dataFim')?.invalid"
+          class="error"
+        >
+          Data de fim é obrigatória.
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="horas">CH Realizada</label>
+        <input id="horas" type="number" formControlName="horas" />
+        <small
+          *ngIf="form.get('horas')?.touched && form.get('horas')?.invalid"
+          class="error"
+        >
+          Informe um número de horas válido.
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="comprovante">Comprovante</label>
+        <input id="comprovante" type="file" formControlName="comprovante" />
+        <small
+          *ngIf="
+            form.get('comprovante')?.touched && form.get('comprovante')?.invalid
+          "
+          class="error"
+        >
+          O comprovante é obrigatório.
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="observacao">Observação</label>
+        <textarea id="observacao" formControlName="observacao"></textarea>
+        <small
+          *ngIf="
+            form.get('observacao')?.touched && form.get('observacao')?.invalid
+          "
+          class="error"
+        >
+          Observação deve ter pelo menos 10 caracteres.
+        </small>
+      </div>
+        <button type="button" (click)="salvar()">Salvar</button>
+    </form>
+  </div>
+</div>

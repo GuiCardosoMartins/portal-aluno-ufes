@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importar Font Awesome */
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+/* Reset global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Melhorar a aparência dos inputs em dispositivos móveis */
+input, button, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Prevenir zoom em inputs no iOS */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select,
+  textarea,
+  input {
+    font-size: 16px;
+  }
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e3a8a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1e40af;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Inter';}
+.card{
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    background-color: white !important;
+    border: 1px solid #ddd;
+}
+.primary-color {
+  color: #004080 !important; /* Azul primário */
+}

@@ -1,0 +1,43 @@
+<div class="all-documents">
+        <div class="filtro-periodo" style="margin: 2rem 0;">
+            <label for="periodo">Selecione o período: </label>
+            <select [(ngModel)]="periodoSelecionado" (ngModelChange)="onPeriodoChange($event)">
+                <option *ngFor="let periodo of periodos" [value]="periodo">{{ periodo }}</option>
+            </select>
+        </div>
+        <div class="card card-documentos">
+        <span style="display: flex; align-items: center; gap: 1rem;">
+            <i class="fa-solid fa-download primary-color"></i><h2 style="font-weight: 600; font-size: 1rem;" class="primary-color">Documentos</h2>
+        </span>
+        <div class="documentos-list">
+            <div class="documento-item">
+                <span class="primary-color">Atestado de Matrícula</span>
+                <button class="btn btn-outline"> <i class="fa-solid fa-download primary-color"></i></button>
+            </div>
+            <div class="documento-item">
+                <span class="primary-color">Atestado de Reconhecimento</span>
+                <button class="btn btn-outline"><i class="fa-solid fa-download primary-color"></i></button>
+            </div>
+            <div class="documento-item">
+                <span class="primary-color">Comprovante de Matrícula Provisório</span>
+                <button class="btn btn-outline"> <i class="fa-solid fa-download primary-color"></i></button>
+            </div>
+            <div class="documento-item">
+                <span class="primary-color">Comprovante de Solicitação</span>
+                <button class="btn btn-outline"> <i class="fa-solid fa-download primary-color"></i></button>
+            </div>
+            <div class="documento-item">
+                <span class="primary-color">Grade de Horário Individual</span>
+                <button class="btn btn-outline"> <i class="fa-solid fa-download primary-color"></i></button>
+            </div>
+            <div class="documento-item">
+                <span class="primary-color ">Ficha Cadastral do Aluno</span>
+                <button class="btn btn-outline"> <i class="fa-solid fa-download primary-color"></i></button>
+            </div>
+            <div class="documento-item primary-color">
+                <span>Identidade UFES</span>
+                <button class="btn btn-outline"> <i class="fa-solid fa-download primary-color"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
