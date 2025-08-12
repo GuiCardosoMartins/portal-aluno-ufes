@@ -26,24 +26,32 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.authErrorMessage = null;
-    if (this.loginForm.invalid) {
-      this.loginForm.markAllAsTouched();
-      return;
-    }
+  this.authErrorMessage = null;
 
-    const { email, password } = this.loginForm.value;
+  if (this.loginForm.invalid) {
+    this.loginForm.markAllAsTouched();
+    return;
+  }
 
-    if (email === MOCK_USER.email && password === MOCK_USER.senha) {
-      sessionStorage.setItem('mockUser', JSON.stringify({ email: MOCK_USER.email, nome: 'Guilherme Cardoso' }));
+  const { email, password } = this.loginForm.value;
+
+  if (email === MOCK_USER.email) {
+    if (password === MOCK_USER.senha) {
+      sessionStorage.setItem('mockUser', JSON.stringify({
+        email: MOCK_USER.email,
+        nome: 'Guilherme Cardoso'
+      }));
       this.router.navigate(['/dashboard']);
     } else {
-      this.authErrorMessage = 'Esta conta não está cadastrada.';
-      this.loginForm.setErrors({ invalidCredentials: true });
-      this.loginForm.get('email')?.markAsTouched();
-      this.loginForm.get('password')?.markAsTouched();
+      this.authErrorMessage = 'Senha inválida.';
+      this.loginForm.get('password')?.setErrors({ invalidPassword: true });
     }
+  } else {
+    this.authErrorMessage = 'Esta conta não está cadastrada.';
+    this.loginForm.get('email')?.setErrors({ invalidEmail: true });
   }
+}
+
 
   onForgotPassword() {
     window.open('https://senha.ufes.br/site/recuperaCredenciais', '_blank');
