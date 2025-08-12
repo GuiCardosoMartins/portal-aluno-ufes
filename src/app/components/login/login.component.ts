@@ -14,9 +14,18 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private router: Router) {}
 
-  ngOnInit() {
-    this._initForm();
-  }
+ ngOnInit() {
+  this._initForm();
+
+  this.loginForm.valueChanges.subscribe(() => {
+    if (this.authErrorMessage) {
+      this.authErrorMessage = null;
+      this.loginForm.get('email')?.setErrors(null);
+      this.loginForm.get('password')?.setErrors(null);
+    }
+  });
+}
+
 
   private _initForm() {
     this.loginForm = this.fb.group({
@@ -24,8 +33,10 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
+
 onSubmit() {
   this.authErrorMessage = null;
+
   if (this.loginForm.invalid) {
     this.loginForm.markAllAsTouched();
     return;
@@ -43,16 +54,11 @@ onSubmit() {
       this.loginForm.get('password')?.markAsTouched();
     }
   } else {
-    // Só marca erro de conta não cadastrada se o email for válido no formato
-    const emailControl = this.loginForm.get('email');
-    if (emailControl?.valid) {
-      this.authErrorMessage = 'Esta conta não está cadastrada.';
-      emailControl.setErrors({ invalidEmail: true });
-      emailControl.markAsTouched();
-    }
-    // Se não estiver válido, deixa só o erro de validação padrão aparecer
+    // Só mostra mensagem geral, não marca erro no controle do email
+    this.authErrorMessage = 'Esta conta não está cadastrada.';
   }
 }
+
 
 
 
