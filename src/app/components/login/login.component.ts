@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
   this.authErrorMessage = null;
-
   if (this.loginForm.invalid) {
     this.loginForm.markAllAsTouched();
     return;
@@ -37,20 +36,20 @@ export class LoginComponent implements OnInit {
 
   if (email === MOCK_USER.email) {
     if (password === MOCK_USER.senha) {
-      sessionStorage.setItem('mockUser', JSON.stringify({
-        email: MOCK_USER.email,
-        nome: 'Guilherme Cardoso'
-      }));
+      sessionStorage.setItem('mockUser', JSON.stringify({ email: MOCK_USER.email, nome: 'Guilherme Cardoso' }));
       this.router.navigate(['/dashboard']);
     } else {
       this.authErrorMessage = 'Senha inválida.';
       this.loginForm.get('password')?.setErrors({ invalidPassword: true });
+      this.loginForm.get('password')?.markAsTouched();
     }
   } else {
     this.authErrorMessage = 'Esta conta não está cadastrada.';
     this.loginForm.get('email')?.setErrors({ invalidEmail: true });
+    this.loginForm.get('email')?.markAsTouched();
   }
 }
+
 
 
   onForgotPassword() {
