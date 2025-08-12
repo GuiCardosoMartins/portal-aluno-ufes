@@ -24,8 +24,7 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
-
-  onSubmit() {
+onSubmit() {
   this.authErrorMessage = null;
   if (this.loginForm.invalid) {
     this.loginForm.markAllAsTouched();
@@ -44,11 +43,17 @@ export class LoginComponent implements OnInit {
       this.loginForm.get('password')?.markAsTouched();
     }
   } else {
-    this.authErrorMessage = 'Esta conta não está cadastrada.';
-    this.loginForm.get('email')?.setErrors({ invalidEmail: true });
-    this.loginForm.get('email')?.markAsTouched();
+    // Só marca erro de conta não cadastrada se o email for válido no formato
+    const emailControl = this.loginForm.get('email');
+    if (emailControl?.valid) {
+      this.authErrorMessage = 'Esta conta não está cadastrada.';
+      emailControl.setErrors({ invalidEmail: true });
+      emailControl.markAsTouched();
+    }
+    // Se não estiver válido, deixa só o erro de validação padrão aparecer
   }
 }
+
 
 
 
