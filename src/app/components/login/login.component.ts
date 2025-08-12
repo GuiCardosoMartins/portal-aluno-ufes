@@ -26,9 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    // limpa erro visual anterior
     this.authErrorMessage = null;
-    // se form inválido, marca tudo pra mostrar erros de validação
     if (this.loginForm.invalid) {
       this.loginForm.markAllAsTouched();
       return;
@@ -37,15 +35,11 @@ export class LoginComponent implements OnInit {
     const { email, password } = this.loginForm.value;
 
     if (email === MOCK_USER.email && password === MOCK_USER.senha) {
-      // login ok: opcional -> salvar mock na sessão pra outras telas consumirem
       sessionStorage.setItem('mockUser', JSON.stringify({ email: MOCK_USER.email, nome: 'Guilherme Cardoso' }));
       this.router.navigate(['/dashboard']);
     } else {
-      // credenciais inválidas
       this.authErrorMessage = 'Esta conta não está cadastrada.';
-      // define erro de nível de form para facilitar estilização
       this.loginForm.setErrors({ invalidCredentials: true });
-      // marca campos tocados para que o UI mostre bordas/erros
       this.loginForm.get('email')?.markAsTouched();
       this.loginForm.get('password')?.markAsTouched();
     }

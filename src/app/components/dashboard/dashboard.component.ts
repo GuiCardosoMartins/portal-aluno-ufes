@@ -28,9 +28,9 @@ interface Grade {
 export class DashboardComponent {
 
   upcomingEvents: Event[] = [
-    { title: 'Prova de Cálculo C', date: '15 Nov', time: '14:00', type: 'prova', status: 'urgent' },
+    { title: 'Prova de Cálculo A', date: '15 Nov', time: '14:00', type: 'prova', status: 'urgent' },
     { title: 'Entrega do Projeto', date: '18 Nov', time: '23:59', type: 'trabalho', status: 'normal' },
-    { title: 'Seminário de IA', date: '22 Nov', time: '10:00', type: 'aula', status: 'normal' },
+    { title: 'Projeto de Redes', date: '22 Nov', time: '10:00', type: 'aula', status: 'normal' },
   ];
 
   recentGrades: Grade[] = [

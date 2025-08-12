@@ -69,7 +69,6 @@ export class ConfiguracoesComponent implements OnInit, CanComponentDeactivate {
       { validators: this.senhasIguais }
     );
     this.formPessoal.valueChanges.subscribe((val) => {
-      // Atualiza MOCK_USER e MOCK_CONFIG com os valores atuais do form pessoal
       MOCK_USER.nome = val.nome;
       MOCK_USER.email = val.email;
       MOCK_CONFIG.telefone = val.telefone;
@@ -79,7 +78,6 @@ export class ConfiguracoesComponent implements OnInit, CanComponentDeactivate {
       MOCK_USER.foto = val.foto;
     });
     this.formSeguranca.valueChanges.subscribe((val) => {
-      // Por exemplo, atualiza MOCK_USER.senha com a nova senha, se ela estiver válida
       if (this.formSeguranca.valid) {
         MOCK_USER.senha = val.novaSenha;
       }

@@ -22,7 +22,7 @@ periodoSelecionado = this.periodos[0];
     { nome: 'Trabalho Prático', notaRecebida: 6.4 },
     ], media: 7.3},
   
-  {periodo: '2022/2',nome: 'Algoritmos Númericos', faltas: 3, status: 'Aprovado', COD: 'QUI101', Cred: 4, atividades: [
+  {periodo: '2022/2',nome: 'Redes de Computadores', faltas: 3, status: 'Aprovado', COD: 'QUI101', Cred: 4, atividades: [
     { nome: 'P1', notaRecebida: 9.3 },
     { nome: 'P2', notaRecebida: 7.3 },
     { nome: 'P3', notaRecebida: 6.4 },

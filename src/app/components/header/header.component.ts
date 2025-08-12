@@ -18,7 +18,7 @@ export class HeaderComponent {
 
   notificacoes = [
     { texto: 'Prova de Banco de Dados amanhã', data: '09/08/2025' },
-    { texto: 'Faltou 1 aula de Algoritmos II', data: '05/08/2025' },
+    { texto: 'Faltou 1 aula de Cálculo A', data: '05/08/2025' },
     { texto: 'Nova nota disponível em Eng. Software', data: '02/08/2025' }
   ];
 
