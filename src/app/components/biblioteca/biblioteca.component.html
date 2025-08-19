@@ -10,7 +10,7 @@
         [config]="slideConfig"
       >
         <div ngxSlickItem *ngFor="let livro of livrosRecentes" class="slide">
-          <a href="#" class="livro-card">
+          <div href="#" class="livro-card">
             <img
               [src]="livro.capaUrl"
               [alt]="'Capa do livro ' + livro.titulo"
@@ -19,7 +19,7 @@
               <p class="livro-titulo">{{ livro.titulo }}</p>
               <p class="livro-autor">{{ livro.autor }}</p>
             </div>
-          </a>
+          </div>
         </div>
       </ngx-slick-carousel>
     </section>
@@ -32,7 +32,7 @@
         [config]="slideConfig"
       >
         <div ngxSlickItem *ngFor="let livro of vistosPorUltimo" class="slide">
-          <a href="#" class="livro-card">
+          <div href="#" class="livro-card">
             <img
               [src]="livro.capaUrl"
               [alt]="'Capa do livro ' + livro.titulo"
@@ -41,7 +41,7 @@
               <p class="livro-titulo">{{ livro.titulo }}</p>
               <p class="livro-autor">{{ livro.autor }}</p>
             </div>
-          </a>
+          </div>
         </div>
       </ngx-slick-carousel>
     </section>
