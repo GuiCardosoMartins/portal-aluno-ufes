@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 60px; /* ou altura que você quiser */
+  height: 60px;
   background-color: white;
   margin: 0;
   display: flex;
@@ -12,6 +12,7 @@
   padding: 1rem;
   color: white;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
 }
 .user-info {
   display: flex;

@@ -1,0 +1,49 @@
+<div class="lib">
+  <div class="biblioteca-container">
+    <h2><i class="fas fa-book-open"></i> Biblioteca</h2>
+
+    <section class="carrossel-section">
+      <h3>Vistos por Último</h3>
+      <ngx-slick-carousel
+        class="carousel"
+        #slickModal="slick-carousel"
+        [config]="slideConfig"
+      >
+        <div ngxSlickItem *ngFor="let livro of livrosRecentes" class="slide">
+          <a href="#" class="livro-card">
+            <img
+              [src]="livro.capaUrl"
+              [alt]="'Capa do livro ' + livro.titulo"
+            />
+            <div class="livro-info">
+              <p class="livro-titulo">{{ livro.titulo }}</p>
+              <p class="livro-autor">{{ livro.autor }}</p>
+            </div>
+          </a>
+        </div>
+      </ngx-slick-carousel>
+    </section>
+
+    <section class="carrossel-section">
+      <h3>Lançamentos Recentes</h3>
+      <ngx-slick-carousel
+        class="carousel"
+        #slickModal="slick-carousel"
+        [config]="slideConfig"
+      >
+        <div ngxSlickItem *ngFor="let livro of vistosPorUltimo" class="slide">
+          <a href="#" class="livro-card">
+            <img
+              [src]="livro.capaUrl"
+              [alt]="'Capa do livro ' + livro.titulo"
+            />
+            <div class="livro-info">
+              <p class="livro-titulo">{{ livro.titulo }}</p>
+              <p class="livro-autor">{{ livro.autor }}</p>
+            </div>
+          </a>
+        </div>
+      </ngx-slick-carousel>
+    </section>
+  </div>
+</div>

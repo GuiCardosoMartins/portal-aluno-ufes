@@ -15,6 +15,8 @@ import { HorariosComponent } from './components/horarios/horarios.component';
 import { NotasComponent } from './components/notas/notas.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BibliotecaComponent } from './components/biblioteca/biblioteca.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -30,12 +32,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     NotasComponent,
     PerfilComponent,
+    BibliotecaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

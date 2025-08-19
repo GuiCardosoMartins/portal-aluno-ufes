@@ -10,6 +10,7 @@ import { AllDocumentsComponent } from './components/all-documents/all-documents.
 import { AddAtivComplementarComponent } from './components/add-ativ-complementar/add-ativ-complementar.component';
 import { ConfiguracoesComponent } from './components/configuracoes/configuracoes.component';
 import { ConfirmExitGuard } from './guards/confirm-exit.guard';
+import { BibliotecaComponent } from './components/biblioteca/biblioteca.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'all-documents', component: AllDocumentsComponent },
   { path: 'add-ativ-complementar', component: AddAtivComplementarComponent, canDeactivate: [ConfirmExitGuard] },
   { path: 'configuracoes', component: ConfiguracoesComponent, canDeactivate: [ConfirmExitGuard] },
+  {path: 'biblioteca', component: BibliotecaComponent},
   { path: '**', redirectTo: '/login' }
 ];
 
