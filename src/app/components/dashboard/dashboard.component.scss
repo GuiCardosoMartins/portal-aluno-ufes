@@ -76,12 +76,12 @@
 }
 
 .event-type.urgent {
-  background-color: #f87171; /* vermelho */
+  background-color: #f87171;
   color: white;
 }
 
 .event-type.normal {
-  background-color: #94a3b8; /* cinza */
+  background-color: #94a3b8;
   color: white;
 }
 
@@ -143,7 +143,6 @@
   color: white;
 }
 
-/* Cores */
 .green-icon { color: #22c55e; }
 .blue-icon { color: #3b82f6; }
 .purple-icon { color: #8b5cf6; }
@@ -154,7 +153,6 @@
 .red-grade { color: #ef4444; }
 .text-muted-grade { color: #6b7280; }
 
-/* Exemplo para progress bar */
 .progress-bar {
   height: 8px;
   border-radius: 4px;

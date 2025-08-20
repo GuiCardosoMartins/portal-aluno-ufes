@@ -10,7 +10,6 @@
     </div>
   </div>
 
-  <!-- Abas -->
   <div class="card card-header">
     <div
       class="card-header-item"
@@ -28,12 +27,9 @@
     </div>
   </div>
 
-  <!-- Conteúdo -->
   <div class="conteudo">
-    <!-- Aba Pessoal -->
     <ng-container *ngIf="abaAtiva === 'pessoal'">
       <form [formGroup]="formPessoal" (ngSubmit)="onSubmitPessoal()">
-        <!-- FOTO DO PERFIL -->
         <div class="card card-foto-perfil">
           <h2>Foto do Perfil</h2>
           <div class="foto-perfil">
@@ -57,7 +53,6 @@
           </div>
         </div>
 
-        <!-- INFORMAÇÕES PESSOAIS -->
         <div class="card card-info-pessoal">
           <h2>Informações Pessoais</h2>
           <div class="info-pessoal">
@@ -124,7 +119,6 @@
           </div>
         </div>
 
-        <!-- ENDEREÇO -->
         <div class="card card-info-pessoal">
           <h2>Endereço</h2>
           <div class="info-pessoal">
@@ -198,7 +192,6 @@
       </form>
     </ng-container>
 
-    <!-- Aba Segurança -->
     <ng-container *ngIf="abaAtiva === 'seguranca'">
       <form [formGroup]="formSeguranca" (ngSubmit)="onSubmitSeguranca()">
         <div class="card card-seguranca">

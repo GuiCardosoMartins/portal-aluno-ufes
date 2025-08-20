@@ -14,8 +14,6 @@ export interface Livro {
 export class BibliotecaComponent {
 livrosRecentes: Livro[] = [];
   vistosPorUltimo: Livro[] = [];
-
-  // Configurações para ambos os carrosséis
   slideConfig = {
     "slidesToShow": 4,      
     "slidesToScroll": 4,   
@@ -24,21 +22,21 @@ livrosRecentes: Livro[] = [];
     "arrows": false,
     "responsive": [
       {
-        breakpoint: 1024, // Para telas menores que 1024px
+        breakpoint: 1024, 
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
         }
       },
       {
-        breakpoint: 600, // Para telas menores que 600px
+        breakpoint: 600, 
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2
         }
       },
       {
-        breakpoint: 480, // Para telas de celular
+        breakpoint: 480, 
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1

@@ -13,7 +13,6 @@
     <span class="notification-icon"><i class="fa-solid fa-bell primary-color"></i></span>
     <span *ngIf="notificacoesCount > 0" class="notification-badge">{{ notificacoesCount }}</span>
 
-    <!-- Tooltip -->
     <div class="notification-tooltip" *ngIf="tooltipAberto">
       <div *ngIf="notificacoes.length; else semNotificacoes">
         <div class="notification-item" *ngFor="let n of notificacoes">

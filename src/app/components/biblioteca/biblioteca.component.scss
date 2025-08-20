@@ -3,14 +3,13 @@
 }
 .biblioteca-container {
   max-width: 1200px;
-//   margin: 2rem auto;
   padding: 0 1rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h2 {
-  color: #004080; /* Cor escura, profissional */
-  border-bottom: 2px solid #004080; /* Azul UFES */
+  color: #004080;
+  border-bottom: 2px solid #004080;
   padding-bottom: 10px;
   margin-bottom: 2rem;
   font-size: 1.5rem;
@@ -49,8 +48,8 @@ h3 {
 
 .livro-card img {
   width: 100%;
-  height: 250px; /* Altura fixa para as capas */
-  object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+  height: 250px;
+  object-fit: cover; 
 }
 
 .livro-info {
@@ -61,13 +60,12 @@ h3 {
   font-weight: bold;
   font-size: 1rem;
   margin: 0 0 5px 0;
-  /* Limita o título a 2 linhas para evitar quebra de layout */
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  min-height: 2.4em; /* Garante altura mínima para 2 linhas */
+  min-height: 2.4em;
 }
 
 .livro-autor {
@@ -78,6 +76,6 @@ h3 {
 
 :host ::ng-deep .slick-prev:before,
 :host ::ng-deep .slick-next:before {
-  color: #004080; /* Azul para as setas */
+  color: #004080;
   font-size: 25px;
 }

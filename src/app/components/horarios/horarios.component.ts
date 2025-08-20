@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   semanaInicio!: Date;
   semanaFim!: Date;
   semana: { nome: string; data: Date }[] = [];
-  semanaOffset = 0; // controla qual semana estamos mostrando
+  semanaOffset = 0;
 
   nomesDias = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
 

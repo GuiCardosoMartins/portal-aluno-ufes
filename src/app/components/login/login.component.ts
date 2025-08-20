@@ -54,14 +54,9 @@ onSubmit() {
       this.loginForm.get('password')?.markAsTouched();
     }
   } else {
-    // Só mostra mensagem geral, não marca erro no controle do email
     this.authErrorMessage = 'Esta conta não está cadastrada.';
   }
 }
-
-
-
-
 
   onForgotPassword() {
     window.open('https://senha.ufes.br/site/recuperaCredenciais', '_blank');

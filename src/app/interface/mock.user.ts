@@ -4,5 +4,5 @@ export const MOCK_USER = {
   nome: "Guilherme Cardoso Martins",
   matricula: "202300125",
   curso: "Ciência da Computação",
-  foto: "assets/avatarAp.png" // avatar fake
+  foto: "assets/avatarAp.png"
 };
